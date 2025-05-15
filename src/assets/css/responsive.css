@@ -1,4 +1,143 @@
+/* --------------------------------------- */
+/*          RESPONSIVE GLOBAL             */
+/* --------------------------------------- */
+
+/* --------------------------------------- */
+/* Tablet grande / pantallas intermedias   */
+/* --------------------------------------- */
 @media (max-width: 1365px) {
+  .layout {
+    /* Apilamos content + aside en una sola columna */
+    grid-template-areas:
+      "nav"
+      "content"
+      "aside";
+    grid-template-columns: 1fr; /* ancho completo */
+  }
+
+  .aside__container {
+    flex-direction: row; /* mantenemos lado a lado avatar/form */
+  }
+
+  .layout__aside {
+    margin-left: 0;  /* quitamos sangría ahora que es full-width */
+    padding: 2rem 1rem;
+  }
+
+  .aside__profile-info {
+    margin: 0 0 2rem; /* espacio abajo */
+  }
+}
+
+/* --------------------------------------- */
+/*       Tablets / móviles anchos (<845px) */
+/* --------------------------------------- */
+@media (max-width: 845px) {
+  .aside__profile-info {
+    width: 100%;
+  }
+
+  .profile-info__general-info,
+  .profile-info__stats {
+    justify-content: center; /* centramos los bloques internos */
+  }
+
+  .aside__container {
+    flex-direction: column; /* avatar arriba, form abajo */
+  }
+}
+
+/* --------------------------------------- */
+/*        Móviles medianos (<690px)        */
+/* --------------------------------------- */
+@media (max-width: 690px) {
+  /* Navbar: apilamos enlaces */
+  .layout__navbar {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    padding: 1rem;
+  }
+  .navbar__container-lists {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+  .container-lists__menu-list,
+  .container-lists__list-end {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .menu-list__link,
+  .list-end__link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  /* Content + Aside ya están full-width por el primer breakpoint */
+  /* Reducimos fuentes de títulos */
+  .content__title,
+  .aside__title {
+    font-size: 2.4rem;
+  }
+}
+
+/* --------------------------------------- */
+/*       Móviles pequeños (<447px)         */
+/* --------------------------------------- */
+@media (max-width: 447px) {
+  /* Perfil: stats en una columna */
+  .profile-info__stats {
+    flex-direction: column;
+    align-items: center;
+  }
+  .stats__following {
+    padding: 0.5rem 0;
+    border-right: none;
+  }
+
+  /* Publicaciones: apilarlas */
+  .posts__post {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+  .post__container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .post__image-user {
+    margin-bottom: 1rem;
+  }
+  .post__content {
+    text-align: center;
+  }
+  .post__buttons {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+/* --------------------------------------- */
+/*          EXTRA BREAKPOINT               */
+/*       Muy móvil (<320px)                */
+/* --------------------------------------- */
+@media (max-width: 320px) {
+  body {
+    font-size: 12px; /* reducir texto para que quepa */
+  }
+  .content__button,
+  .content__btn-more-post,
+  .post__button,
+  input[type="submit"],
+  button {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+}
+/* @media (max-width: 1365px) {
     .layout {
         grid-template-areas:
             "nav nav"
@@ -107,5 +246,5 @@
         padding: 0;
         border-right: none;
     }
-}
+} */
 
