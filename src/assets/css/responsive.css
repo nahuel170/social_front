@@ -51,34 +51,33 @@
 /*        Móviles medianos (<690px)        */
 /* --------------------------------------- */
 @media (max-width: 690px) {
-  /* Hacemos que la navbar pueda “envolver” sus items en varias filas */
+  /* Quitamos el flex-direction: column y permitimos que los items se envuelvan */
   .layout__navbar {
     flex-wrap: wrap;
     padding: 0.5rem 1rem;
   }
 
-  /* Volvemos a fila para que los enlaces no desaparezcan,
-     y permitimos wrap para que bajen a la siguiente línea */
   .navbar__container-lists {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-wrap: wrap;          /* los enlaces que no quepan saltan de línea */
+    justify-content: center;   /* centrado horizontal */
+    gap: 0.5rem;               /* espacio entre enlaces */
     width: 100%;
   }
 
-  /* Ajustamos cada enlace para que ocupe el espacio justo */
+  /* Los enlaces ocupan el ancho justo y se adaptan al wrap */
   .menu-list__link,
   .list-end__link {
-    flex: 1 1 auto;       /* crecer/reducir según quepan */
-    min-width: 100px;     /* ancho mínimo para tap targets */
-    text-align: center;   /* centrado del texto */
-    padding: 0.8rem 1rem;  /* menos padding para caber más */
+    flex: 0 1 auto;            /* pueden reducirse/crecer en cada fila */
+    min-width: 80px;           /* ancho mínimo para que sigan siendo táctiles */
+    text-align: center;
+    padding: 0.6rem 1rem;
   }
 
-  /* Reducimos un poco el tamaño de fuente */
-  .menu-list__title {
-    font-size: 1.2rem;
+  /* Ajustes de iconos o texto si quieres reducir todavía más */
+  .menu-list__link i,
+  .list-end__link i {
+    margin-right: 0.3rem;
   }
 }
 
