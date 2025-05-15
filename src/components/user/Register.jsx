@@ -49,7 +49,7 @@ export const Register = () => {
   <div className="login-box">
   <div class="logo">
     <header className="logo">
-    <img src="logo-travi-3.ico" alt="Logo" />
+    <img src="fongo ig.webp" alt="Logo" />
       <h2>BIENVENIDOS</h2>
     </header>
     </div>
