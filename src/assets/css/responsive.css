@@ -136,24 +136,24 @@
    ---------------------------------------- */
 
 /* 1) Base: centro absoluto */
-.login-container {
+/* .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  /* opcional: altura mínima para centrar vertical */
-  min-height: calc(100vh - 60px); /* si tu navbar mide 60px */
+
+  min-height: calc(100vh - 60px); 
 }
 .login-box {
   background: #4e6e81;
   padding: 20px 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  max-width: 400px;   /* no más ancho que esto */
-  width: 100%;        /* ocupa todo hasta 400px */
-  margin: auto;       /* lo centra horizontalmente */
+  max-width: 400px;   
+  width: 100%;        
+  margin: auto;       
   text-align: center;
-}
+} */
 
 /* 2) Ajustes extra en pantallas pequeñas */
 @media (max-width: 690px) {
