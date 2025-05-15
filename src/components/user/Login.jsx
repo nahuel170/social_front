@@ -29,13 +29,13 @@ export const Login = () => {
 
     const data = await request.json();
     localStorage.setItem("token", data.token);
-    localStorage.setItem("user", JSON.stringify(data.usuario));
+    localStorage.setItem("user", JSON.stringify(data.user));
 
     if (data && data.status === "success") {
       setSaved("login");
 
       // dispatch(setUser (data.usuario)); 
-      setAuth(data.usuario); 
+      setAuth(data.user); 
 
       setTimeout(() => {
         window.location.reload();
