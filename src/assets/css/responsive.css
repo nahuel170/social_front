@@ -75,6 +75,7 @@
     /* Quitar alturas forzadas si las tienes */
     height: auto;
   }
+  .login-box{justify-content: center;}
 }
 
 
