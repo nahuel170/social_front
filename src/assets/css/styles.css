@@ -606,15 +606,57 @@ button{
     font-size: 0.9em;
     color: #555;
 }
-
+/* LOGIN: contenedor flex para centrar */
 .login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0; /* opcional: espacio arriba/abajo */
+}
+
+/* Caja del login: centrado automático y ancho máximo */
+.login-box {
+  margin: 0 auto;         /* borra tu margin-left y centra */
+  background: #4e6e81;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;     /* centro de texto por defecto */
+  max-width: 350px;
+  width: 100%;
+}
+
+/* Logo y título dentro de la caja: flex column */
+.login-box .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-box .logo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin: 0;               /* quita margin-left hack */
+}
+
+.login-box .logo h2 {
+  color: white;
+  font-size: 2rem;         /* ajusta a 2rem para escalar mejor */
+  margin: 1rem 0 0;        /* separa del logo */
+  letter-spacing: 0.2rem;  
+}
+/* .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
   }
   
-  /* Caja del login */
+ 
   .login-box {
     margin-left: 45%;
     background: #4e6e81;
@@ -626,7 +668,7 @@ button{
     width: 100%;
   }
   
-  /* Logo y título */
+ 
   .logo img {
     width: 100px;
     height: 100px;
@@ -639,8 +681,8 @@ button{
     color: white;
     font-size: 20px;
     margin-bottom: 15px;
-    letter-spacing: 3px; /* Añade espacio entre las letras */
-  }
+    letter-spacing: 3px; 
+  } */
   /* Input groups */
 .input-group {
     position: relative;

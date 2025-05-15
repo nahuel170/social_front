@@ -135,37 +135,13 @@
    CENTRAR LOGIN/REGISTRO RESPONSIVAMENTE
    ---------------------------------------- */
 
-/* 1) Base: centro absoluto */
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-
-  min-height: calc(100vh - 60px); 
-}
-.login-box {
-  background: #4e6e81;
-  padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  max-width: 400px;   
-  width: 100%;        
-  margin: auto;       
-  text-align: center;
-}
-
 /* 2) Ajustes extra en pantallas pequeñas */
 @media (max-width: 690px) {
   .login-container {
-    padding: 2rem 1rem;      /* espacio en los lados */
-    min-height: auto;        /* si no quieres centrar vertical */
-    align-items: flex-start; /* formulario empieza un poco más abajo */
+    padding: 1rem 0;
   }
   .login-box {
     padding: 15px 20px;
-    max-width: 100%;         /* ocupa todo el ancho disponible */
-    border-radius: 6px;
   }
 }
 /* @media (max-width: 1365px) {
