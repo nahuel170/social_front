@@ -102,7 +102,7 @@ export const AuthProvider = ({children}) => {
         const request = await fetch(Global.url + "user/getUser/" + userId,{
             method: "GET",
             headers: {
-                "Content-Type": "application/jsno",
+                "Content-Type": "application/json",
                 "Authorization": token
             }
         });
@@ -112,7 +112,7 @@ export const AuthProvider = ({children}) => {
         const requestCounters = await fetch(Global.url + "user/counters/" + userId,{
             method: "GET",
             headers: {
-                "Content-Type": "application/jsno",
+                "Content-Type": "application/json",
                 "Authorization": token
             }
         });
