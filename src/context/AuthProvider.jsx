@@ -79,19 +79,19 @@ import { Global } from '../helpers/Global';
 
 const AuthContext = createContext();
 
-export const AuthProvider = ({children}) => {
+export const AuthProvider = ({ children }) => {
     const [auth, setAuth] = useState({});
     const [counters, setCounters] = useState({});
     const [loading, setLoading] = useState(true);
-    useEffect(() =>{
-            authUser();
-    },[]);
+    useEffect(() => {
+        authUser();
+    }, []);
 
-    const authUser = async ()=>{
+    const authUser = async () => {
         const token = localStorage.getItem("token");
         const user = localStorage.getItem("user");
 
-        if(!token || !user ){
+        if (!token || !user) {
             setLoading(false);
             return false;
         };
@@ -99,7 +99,7 @@ export const AuthProvider = ({children}) => {
         const userObj = JSON.parse(user);
         const userId = userObj.id;
 
-        const request = await fetch(Global.url + "user/getUser/" + userId,{
+        const request = await fetch(Global.url + "user/getUser/" + userId, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -109,7 +109,7 @@ export const AuthProvider = ({children}) => {
 
         const data = await request.json();
 
-        const requestCounters = await fetch(Global.url + "user/counters/" + userId,{
+        const requestCounters = await fetch(Global.url + "user/counters/" + userId, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

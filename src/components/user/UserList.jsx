@@ -8,9 +8,9 @@ import ReactTimeAgo from 'react-time-ago';
 
 
 export const UserList = ({ users, setUsers, getUsers, following, setFollowing,
-    page, setPage, more, loading}) => {
+    page, setPage, more, loading }) => {
 
-      
+
     const { auth } = useAuth();
 
     const nextPage = () => {
@@ -72,7 +72,7 @@ export const UserList = ({ users, setUsers, getUsers, following, setFollowing,
             console.error("Error al dejar de seguir al usuario:", error);
         }
     };
-  
+
     return (
         <>
             <div className="content__posts">
@@ -100,10 +100,10 @@ export const UserList = ({ users, setUsers, getUsers, following, setFollowing,
                                     <a href="#" className="user-info__create-date"><ReactTimeAgo date={user.created_at} locale="es-ES" /></a>
                                     <div className="profile-info__stats">
                                     </div>
-                               
+
                                     <div className="profile-info__stats">
-                        
-                        {/* <div className="stats__following">
+
+                                        {/* <div className="stats__following">
                             <Link to={"/social/seguidores/" + user._id} className="following__link">
                                 <span className="following__title">Seguidores</span>
                                 <span className="following__number">{counters.followers >= 1 ? counters.followers : 0}</span>
@@ -119,7 +119,7 @@ export const UserList = ({ users, setUsers, getUsers, following, setFollowing,
                                 <span className="following__title">Likes </span>
                                 <span className="following__number">{counters.likesTotal || 0}</span>
                         </div> */}
-                    </div>
+                                    </div>
                                 </div>
 
                                 <h4 className="post__content">{user.bio}</h4>
@@ -161,44 +161,3 @@ export const UserList = ({ users, setUsers, getUsers, following, setFollowing,
         </>
     )
 }
-
-
-// const handleSubscription = async (userId) => {
-//     try {
-//         const response = await fetch(Global.url + "follow/save", {
-//             method: "POST",
-//             headers: {
-//                 "Content-Type": "application/json",
-//                 "Authorization": localStorage.getItem("token")
-//             },
-//             body: JSON.stringify({ followedUserId: userId })
-//         });
-
-//         const data = await response.json();
-//         if (data.status === "success" && data.preferenceId) {
-//             // Redirigir a la pasarela de pago de Mercado Pago
-//             window.location.href = `https://www.mercadopago.com/checkout/v1/redirect?preference-id=${data.preferenceId}`;
-//         }
-//     } catch (error) {
-//         console.error('Error al iniciar la suscripción y seguir:', error);
-//     }
-// };
-
-// const handleUnsubscription = async (userId) => {
-//     try {
-//         const response = await fetch(Global.url + "follow/unfollow/" + userId, {
-//             method: "POST",
-//             headers: {
-//                 "Content-Type": "application/json",
-//                 "Authorization": localStorage.getItem("token")
-//             }
-//         });
-
-//         const data = await response.json();
-//         if (data.status === "success") {
-//             setFollowing(false);
-//         }
-//     } catch (error) {
-//         console.error('Error al cancelar la suscripción y dejar de seguir:', error);
-//     }
-// };

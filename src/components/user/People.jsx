@@ -6,7 +6,7 @@ export const People = () => {
 
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
- 
+
   const [more, setMore] = useState(true);
   const [following, setFollowing] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,7 +14,7 @@ export const People = () => {
 
   useEffect(() => {
     getUsers();
-   
+
   }, [page]);
 
   const getUsers = async () => {
@@ -65,10 +65,10 @@ export const People = () => {
         setPage={setPage}
         more={more}
         loading={loading}
-        //  counters={counters}
-        //  setCounters={setCounters}
-        
-     
+      //  counters={counters}
+      //  setCounters={setCounters}
+
+
       />
     </>
   );

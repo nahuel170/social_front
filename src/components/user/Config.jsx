@@ -5,7 +5,7 @@ import { SerializeForm } from '../../helpers/SerializeForm';
 import Avatar from '../../assets/img/user.png';
 
 export const Config = () => {
-  const {auth, setAuth} = useAuth();
+  const { auth, setAuth } = useAuth();
   const [saved, setSaved] = useState("not_saved");
 
   const updateUser = async (e) => {

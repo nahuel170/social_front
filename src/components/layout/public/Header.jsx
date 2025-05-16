@@ -10,7 +10,7 @@ export const Header = () => {
                 <a href="#" className="navbar__title">SocialApp</a>
             </div>
 
-            <Nav/>
+            <Nav />
 
         </header>
     )

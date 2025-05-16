@@ -1,4 +1,3 @@
-// publicationReducer.js
 const initialState = {
   publications: [],
 };
@@ -66,7 +65,7 @@ export default function publicationReducer(state = initialState, action) {
     // Cuando CUALQUIER usuario (incluyendo el local) da like
     // y el servidor emite 'publicationLiked'
     case 'PUBLICATION_LIKED': {
-      const { publicationId, userId } = action.payload; 
+      const { publicationId, userId } = action.payload;
       return {
         ...state,
         publications: state.publications.map((pub) => {

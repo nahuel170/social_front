@@ -35,47 +35,47 @@ export const PublicationList = ({ publications, getPublications, page,
         setPage(1);
         setMore(true);
     }
-  const handleLike = async (publicationId) => {
-      try {
-        const response = await fetch(Global.url + `publication/like/${publicationId}`, {
-          method: 'POST',
-          headers: {
-            'Authorization': localStorage.getItem('token'),
-          },
-        });
-        const data = await response.json();
-  
-        if (data.status === 'success') {
-          // // Actualizar estado local
-          // setLikes((prev) => ({ ...prev, [publicationId]: true }));
-          // Despachar acción a Redux (y opcionalmente socketMiddleware)
-          dispatch(likePublication(publicationId, auth._id));
+    const handleLike = async (publicationId) => {
+        try {
+            const response = await fetch(Global.url + `publication/like/${publicationId}`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': localStorage.getItem('token'),
+                },
+            });
+            const data = await response.json();
+
+            if (data.status === 'success') {
+                // // Actualizar estado local
+                // setLikes((prev) => ({ ...prev, [publicationId]: true }));
+                // Despachar acción a Redux (y opcionalmente socketMiddleware)
+                dispatch(likePublication(publicationId, auth._id));
+            }
+        } catch (error) {
+            console.error('Error al dar like:', error);
         }
-      } catch (error) {
-        console.error('Error al dar like:', error);
-      }
     };
-  
-    // 3) Manejar unlike
+
+    //Manejar unlike
     const handleUnlike = async (publicationId) => {
-      try {
-        const response = await fetch(Global.url + `publication/unlike/${publicationId}`, {
-          method: 'POST',
-          headers: {
-            'Authorization': localStorage.getItem('token'),
-          },
-        });
-        const data = await response.json();
-  
-        if (data.status === 'success') {
-          // // Actualizar estado local
-          // setLikes((prev) => ({ ...prev, [publicationId]: false }));
-          // Despachar acción a Redux
-          dispatch(unlikePublication(publicationId, auth._id));
+        try {
+            const response = await fetch(Global.url + `publication/unlike/${publicationId}`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': localStorage.getItem('token'),
+                },
+            });
+            const data = await response.json();
+
+            if (data.status === 'success') {
+                // // Actualizar estado local
+                // setLikes((prev) => ({ ...prev, [publicationId]: false }));
+                // Despachar acción a Redux
+                dispatch(unlikePublication(publicationId, auth._id));
+            }
+        } catch (error) {
+            console.error('Error al quitar like:', error);
         }
-      } catch (error) {
-        console.error('Error al quitar like:', error);
-      }
     };
     return (
         <>
@@ -144,23 +144,6 @@ export const PublicationList = ({ publications, getPublications, page,
                                             <FaFire className="icon-liked" />
                                         </button>
                                     )}
-                                    {/* {/* <p>{publication.likes.length} me gusta</p>
-                                    {!likes[publication._id] ? (
-                                        <button
-                                            className="like-button"
-                                            onClick={() => handleLike(publication._id)}
-                                        >
-                                              <FaFire className="icon-unliked" /> 
-                                        </button>
-                                    ) : (
-                                        <button
-                                            className="like-button"
-                                            onClick={() => handleUnlike(publication._id)}
-                                        >
-                                              <FaFire className="icon-liked" /> 
-                                        </button>
-                                    )}  */}
-
 
                                 </div>
 
@@ -181,7 +164,6 @@ export const PublicationList = ({ publications, getPublications, page,
                 }
             </div>
 
-
             {more &&
                 <div className="content__container-btn">
                     <button className="content__btn-more-post" onClick={nextPage}>
@@ -189,7 +171,6 @@ export const PublicationList = ({ publications, getPublications, page,
                     </button>
                 </div>
             }
-
         </>
     )
 }

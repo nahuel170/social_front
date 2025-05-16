@@ -1,4 +1,3 @@
-// src/actions/topLikesActions.js
 import { Global } from '../src/helpers/Global';
 
 export const FETCH_TOP_LIKES_SUCCESS = 'FETCH_TOP_LIKES_SUCCESS';

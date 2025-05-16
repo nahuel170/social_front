@@ -14,7 +14,7 @@ export const Following = () => {
   const [loading, setLoading] = useState(true);
   const [userProfile, setUserProfile] = useState({});
 
-const params = useParams();
+  const params = useParams();
 
   useEffect(() => {
     getUsers();
@@ -38,7 +38,7 @@ const params = useParams();
     let cleanUsers = [];
 
     data.followed.forEach(follow => {
-        cleanUsers = [...cleanUsers, follow.followed]
+      cleanUsers = [...cleanUsers, follow.followed]
     });
     data.users = cleanUsers;
     console.log(data.users);

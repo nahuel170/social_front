@@ -37,7 +37,7 @@ export const Followers = () => {
     let cleanUsers = [];
 
     data.follows.forEach(follow => {
-        cleanUsers = [...cleanUsers, follow.user]
+      cleanUsers = [...cleanUsers, follow.user]
     });
     data.users = cleanUsers;
     console.log(data.users);
