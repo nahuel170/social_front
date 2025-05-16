@@ -56,7 +56,7 @@ export const Register = () => {
     
 
     {saved == "saved" ? 
-    <strong className='alert alert-success'>Usuario registrado correctamente!! </strong>
+    <strong className='alert alert-success'>Usuario registrado correctamente!! Logueate!! </strong>
     : '' }
     {saved == "error" ? 
     <strong className='alert alert-danger'>Usuario no se ha registrado!! </strong>
